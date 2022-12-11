@@ -117,7 +117,7 @@
         android:textColor="#fff"
         android:textSize="15sp"
         android:textStyle="bold"
-        android:onClick="loginLayout"/>
+       />
 
 
 
