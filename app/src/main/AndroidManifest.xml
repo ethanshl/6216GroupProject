@@ -26,6 +26,7 @@
         <activity android:name=".HomeActivity"></activity>
         <activity android:name=".CreateActivity"></activity>
         <activity android:name=".MessageActivity"></activity>
+        <activity android:name=".PostActivity"></activity>
     </application>
 
 </manifest>
