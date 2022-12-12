@@ -46,4 +46,9 @@ public class MessageActivity extends Activity{
             }
         });
     }
+    public void backHomeLayout(View view){
+        Intent intent = new Intent(MessageActivity.this, HomeActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        startActivity(intent);
+    }
 }

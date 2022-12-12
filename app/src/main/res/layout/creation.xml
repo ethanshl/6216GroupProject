@@ -1,16 +1,127 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Create"
-        android:textSize="50sp"
-        android:textStyle="bold"
-        android:layout_centerInParent="true"/>
+        android:layout_alignParentTop="true"
+        android:background="@color/teal_200"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="25dp"
+            android:background="@color/teal_200"
+            android:onClick="backHomeLayout"
+            android:scaleType="fitXY"
+            android:src="@drawable/left"
+            app:tint="@color/white" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="95dp"
+            android:paddingTop="15dp"
+            android:text="Create Post"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="58dp">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnCount="2"
+            android:padding="10dp"
+            android:useDefaultMargins="true">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:id="@+id/titleEditText"
+                android:hint="Title"
+                android:layout_column="0"
+                android:maxLength="18"
+                android:ems="20"
+                android:padding="12dp"
+                android:background="#BBDEFB"
+                android:layout_columnSpan="2"/>
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:id="@+id/depEditText"
+                android:hint="Departure Location"
+                android:layout_column="0"
+                android:maxLength="18"
+                android:ems="20"
+                android:padding="12dp"
+                android:background="#BBDEFB"
+                android:layout_columnSpan="2"/>
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:id="@+id/desEditText"
+                android:hint="Destination"
+                android:layout_column="0"
+                android:maxLength="18"
+                android:ems="20"
+                android:padding="12dp"
+                android:background="#BBDEFB"
+                android:layout_columnSpan="2"/>
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:id="@+id/TimeEditText"
+                android:hint="Departure Time"
+                android:layout_column="0"
+                android:maxLength="18"
+                android:ems="20"
+                android:padding="12dp"
+                android:background="#BBDEFB"
+                android:layout_columnSpan="2"/>
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                android:inputType="text"
+                android:id="@+id/contentEditText"
+                android:hint="Content"
+                android:layout_column="0"
+                android:maxLength="18"
+                android:ems="20"
+                android:padding="12dp"
+                android:background="#BBDEFB"
+                android:layout_columnSpan="2"/>
+
+            <Button
+                android:id="@+id/loginButton"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_columnSpan="2"
+                android:layout_gravity="center"
+                android:backgroundTint="#00B7FF"
+                android:layout_marginTop="20dp"
+                android:padding="10dp"
+                android:text="Post"
+                android:textColor="#fff"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:onClick="backHomeLayout"/>
+
+        </GridLayout>
+
+
+    </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -20,6 +131,6 @@
         app:itemBackground="@color/teal_200"
         app:itemIconTint="@drawable/selector"
         app:itemTextColor="@drawable/selector"
-        app:menu="@menu/menu"/>
+        app:menu="@menu/menu" />
 
 </RelativeLayout>

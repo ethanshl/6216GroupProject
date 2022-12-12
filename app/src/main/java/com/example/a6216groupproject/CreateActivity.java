@@ -47,4 +47,9 @@ public class CreateActivity extends Activity {
             }
         });
     }
+    public void backHomeLayout(View view){
+        Intent intent = new Intent(CreateActivity.this, HomeActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        startActivity(intent);
+    }
 }
