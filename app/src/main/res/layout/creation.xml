@@ -42,81 +42,105 @@
             android:padding="10dp"
             android:useDefaultMargins="true">
 
-            <EditText
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="text"
+                android:layout_marginLeft="10dp"
+                android:text="Category: "
+                android:textSize="17dp" />
+
+            <ToggleButton
+                android:id="@+id/catToggleButton"
+                android:layout_width="296dp"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="#BBC6CC"
+                android:checked="false"
+                android:textColor="#fff"
+                android:textOff="Driver"
+                android:textOn="Passenger" />
+
+            <EditText
                 android:id="@+id/titleEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_columnSpan="2"
+                android:background="#BBDEFB"
+                android:ems="20"
                 android:hint="Title"
-                android:layout_column="0"
-                android:maxLength="18"
-                android:ems="20"
-                android:padding="12dp"
-                android:background="#BBDEFB"
-                android:layout_columnSpan="2"/>
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:inputType="text"
+                android:maxLength="40"
+                android:padding="12dp" />
+
+            <EditText
                 android:id="@+id/depEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_columnSpan="2"
+                android:background="#BBDEFB"
+                android:ems="20"
                 android:hint="Departure Location"
-                android:layout_column="0"
-                android:maxLength="18"
-                android:ems="20"
-                android:padding="12dp"
-                android:background="#BBDEFB"
-                android:layout_columnSpan="2"/>
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:inputType="text"
+                android:maxLength="40"
+                android:padding="12dp" />
+
+            <EditText
                 android:id="@+id/desEditText"
-                android:hint="Destination"
-                android:layout_column="0"
-                android:maxLength="18"
-                android:ems="20"
-                android:padding="12dp"
-                android:background="#BBDEFB"
-                android:layout_columnSpan="2"/>
-            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="text"
-                android:id="@+id/TimeEditText"
-                android:hint="Departure Time"
                 android:layout_column="0"
-                android:maxLength="18"
-                android:ems="20"
-                android:padding="12dp"
+                android:layout_columnSpan="2"
                 android:background="#BBDEFB"
-                android:layout_columnSpan="2"/>
+                android:ems="20"
+                android:hint="Destination"
+                android:inputType="text"
+                android:maxLength="40"
+                android:padding="12dp" />
+
             <EditText
+                android:id="@+id/timeEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_columnSpan="2"
+                android:background="#BBDEFB"
+                android:ems="20"
+                android:hint="Departure Time"
+                android:inputType="text"
+                android:maxLength="40"
+                android:padding="12dp" />
+
+            <EditText
+                android:id="@+id/contentEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="300dp"
-                android:inputType="text"
-                android:id="@+id/contentEditText"
-                android:hint="Content"
                 android:layout_column="0"
-                android:maxLength="18"
-                android:ems="20"
-                android:padding="12dp"
+                android:layout_columnSpan="2"
                 android:background="#BBDEFB"
-                android:layout_columnSpan="2"/>
+                android:ems="20"
+                android:hint="Content"
+                android:inputType="text"
+                android:padding="12dp" />
 
             <Button
-                android:id="@+id/loginButton"
+                android:id="@+id/postButton"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_columnSpan="2"
                 android:layout_gravity="center"
-                android:backgroundTint="#00B7FF"
                 android:layout_marginTop="20dp"
+                android:backgroundTint="#00B7FF"
+                android:onClick="backHomeLayout"
                 android:padding="10dp"
                 android:text="Post"
                 android:textColor="#fff"
                 android:textSize="15sp"
-                android:textStyle="bold"
-                android:onClick="backHomeLayout"/>
+                android:textStyle="bold" />
 
         </GridLayout>
 
