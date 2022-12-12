@@ -11,19 +11,70 @@ import android.widget.Toast;
 import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import android.widget.ToggleButton;
 
 
 public class CreateActivity extends Activity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.creation);
+
+        ToggleButton catToggleButton = (ToggleButton) findViewById(R.id.catToggleButton);
+
+        EditText title = (EditText) findViewById(R.id.titleEditText);
+        EditText departureLocation = (EditText) findViewById(R.id.depEditText);
+        EditText destination = (EditText) findViewById(R.id.desEditText);
+        EditText depTime = (EditText) findViewById(R.id.timeEditText);
+        EditText content = (EditText) findViewById(R.id.contentEditText);
+
+        Button postButton = (Button) findViewById(R.id.postButton);
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
 
         // Set Home selected
         bottomNavigationView.setSelectedItemId(R.id.create);
+
+        postButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String catString = "";
+                String titleString = title.getText().toString();
+                String departureLocationString = departureLocation.getText().toString();
+                String destinationString = destination.getText().toString();
+                String depTimeString = depTime.getText().toString();
+                String contentString = content.getText().toString();
+
+                if (catToggleButton.isChecked()){
+                    catString = "Passenger";
+
+                } else {
+                    catString = "Driver";
+                }
+
+
+                if (TextUtils.isEmpty(titleString) || TextUtils.isEmpty(departureLocationString)|| TextUtils.isEmpty(destinationString) || TextUtils.isEmpty(depTimeString) || TextUtils.isEmpty(contentString)){
+                    Toast.makeText(getApplicationContext(), "Please fill in your post information.", Toast.LENGTH_LONG).show();
+                } else {
+
+                    Intent intent = new Intent(CreateActivity.this, HomeActivity.class);
+                    intent.putExtra("catStore", catString);
+                    intent.putExtra("titleStore", titleString);
+                    intent.putExtra("departureLocationStore", departureLocationString);
+                    intent.putExtra("destinationStore", destinationString);
+                    intent.putExtra("depTimeStore", depTimeString);
+                    intent.putExtra("contentStore", contentString);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    startActivity(intent);
+                    Toast.makeText(getApplicationContext(), "Your Post has been created successfully!", Toast.LENGTH_LONG).show();
+                }
+
+
+            }
+        });
 
         // Perform item selected listener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
