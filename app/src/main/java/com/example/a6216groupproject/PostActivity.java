@@ -11,6 +11,7 @@ import android.widget.Toast;
 import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import android.widget.TextView;
 
 public class PostActivity extends Activity {
     @Override
@@ -20,6 +21,30 @@ public class PostActivity extends Activity {
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
+        TextView title = (TextView) findViewById(R.id.titleTextView);
+        TextView category = (TextView) findViewById(R.id.catTextView);
+        TextView departureLocation = (TextView) findViewById(R.id.depLocationTextView);
+        TextView destination = (TextView) findViewById(R.id.destinationTextView);
+        TextView depTime = (TextView) findViewById(R.id.depTimeTextView);
+        TextView content = (TextView) findViewById(R.id.contentTextView);
+
+        Intent intent = getIntent();
+        String usernameString = intent.getStringExtra("usernameStore");
+        String titleString = intent.getStringExtra("titleStore");
+        String categoryString = intent.getStringExtra("catStore");
+        String departureLocationString = intent.getStringExtra("departureLocationStore");
+        String destinationString = intent.getStringExtra("destinationStore");
+        String depTimeString = intent.getStringExtra("depTimeStore");
+        String contentString = intent.getStringExtra("contentStore");
+
+
+        title.setText(titleString);
+        category.setText(categoryString);
+        departureLocation.setText(departureLocationString);
+        destination.setText(destinationString);
+        depTime.setText(depTimeString);
+        content.setText(contentString);
+
 
 
         // Perform item selected listener

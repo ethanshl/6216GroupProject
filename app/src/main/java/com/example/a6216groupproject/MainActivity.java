@@ -22,27 +22,30 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
+        Intent intent = getIntent();
+        String usernameString = intent.getStringExtra("usernameStore");
+        String passwordString = intent.getStringExtra("passwordStore");
+
         EditText username = (EditText) findViewById(R.id.loginUsername);
         EditText password = (EditText) findViewById(R.id.loginPassword);
         Button loginButton = (Button) findViewById(R.id.loginButton);
-        Intent intent = getIntent();
-        String usernameStore = intent.getStringExtra("usernameStore");
-        String passwordStore = intent.getStringExtra("passwordStore");
+
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String usernameString = username.getText().toString();
-                String passwordString = password.getText().toString();
+                String usernameType = username.getText().toString();
+                String passwordType = password.getText().toString();
 
                 if (TextUtils.isEmpty(usernameString) || TextUtils.isEmpty(passwordString)){
                     Toast.makeText(getApplicationContext(), "Please fill in your account information.", Toast.LENGTH_LONG).show();
-                } else if (!usernameString.equals(usernameStore) || !passwordString.equals(passwordStore)){
+                } else if (!usernameType.equals(usernameString) || !passwordType.equals(passwordString)){
                     Toast.makeText(getApplicationContext(), "Username or Password is incorrect.", Toast.LENGTH_LONG).show();
                 } else {
-                    Intent intent2 = new Intent(MainActivity.this, NewPostActivity.class);
-                    intent2.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                    startActivity(intent2);
+                    Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                    intent.putExtra("usernameStore", usernameString);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    startActivity(intent);
                     Toast.makeText(getApplicationContext(), "Login successfully!", Toast.LENGTH_LONG).show();
                 }
 
