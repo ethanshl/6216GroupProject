@@ -28,7 +28,6 @@ public class HomeActivity extends Activity {
 
         Button postButton = (Button) findViewById(R.id.post1Button);
         Intent intent = getIntent();
-
         TextView title = (TextView) findViewById(R.id.titleTextView);
         TextView category = (TextView) findViewById(R.id.catTextView);
         TextView departureLocation = (TextView) findViewById(R.id.depTextView);
@@ -59,8 +58,9 @@ public class HomeActivity extends Activity {
                 @Override
                 public void onClick(View v) {
 
-                    Intent intent = new Intent(HomeActivity.this, NewPostActivity.class);
+                    Intent intent = new Intent(HomeActivity.this, PostActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    intent.putExtra("usernameStore", usernameString);
                     intent.putExtra("titleStore", titleString);
                     intent.putExtra("catStore", categoryString);
                     intent.putExtra("departureLocationStore", departureLocationString);
@@ -97,7 +97,7 @@ public class HomeActivity extends Activity {
         });
     }
     public void postLayout(View view){
-        Intent intent = new Intent(HomeActivity.this, NewPostActivity.class);
+        Intent intent = new Intent(HomeActivity.this, PostActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         startActivity(intent);
     }
