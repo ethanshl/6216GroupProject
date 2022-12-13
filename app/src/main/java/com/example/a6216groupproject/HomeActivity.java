@@ -7,6 +7,7 @@ import android.view.View;
 import android.content.Intent;
 import android.widget.Button;
 import android.widget.EditText; // for bill amount input
+import android.widget.TextView;
 import android.widget.Toast;
 import android.view.MenuItem;
 import androidx.annotation.NonNull;
@@ -18,6 +19,22 @@ public class HomeActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
+        Intent intent = getIntent();
+
+        TextView title = (TextView) findViewById(R.id.titleTextView);
+        TextView category = (TextView) findViewById(R.id.catTextView);
+        TextView departureLocation = (TextView) findViewById(R.id.depTextView);
+        TextView destination = (TextView) findViewById(R.id.desTextView);
+        TextView depTime = (TextView) findViewById(R.id.depTimeTextView);
+        TextView username= (TextView) findViewById(R.id.userTextView);
+        String usernameStore = intent.getStringExtra("usernameStore");
+        String titleStore = intent.getStringExtra("titleStore");
+        String categoryStore = intent.getStringExtra("catStore");
+        String departureLocationStore = intent.getStringExtra("departureLocationStore");
+        String destinationStore = intent.getStringExtra("destinationStore");
+        String depTimeStore = intent.getStringExtra("depTimeStore");
+
+
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
@@ -25,6 +42,14 @@ public class HomeActivity extends Activity {
         // Set Home selected
         bottomNavigationView.setSelectedItemId(R.id.home);
 
+        if (!TextUtils.isEmpty(titleStore) || !TextUtils.isEmpty(departureLocationStore)|| !TextUtils.isEmpty(destinationStore) || !TextUtils.isEmpty(depTimeStore)) {
+            title.setText(titleStore);
+            category.setText(categoryStore);
+            departureLocation.setText("Departure Location: " + departureLocationStore);
+            destination.setText("Destination Location: " + destinationStore);
+            depTime.setText("Departure Time: " + depTimeStore);
+            username.setText("By: " + usernameStore);
+        }
         // Perform item selected listener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -40,6 +65,7 @@ public class HomeActivity extends Activity {
                         return true;
                     case R.id.create:
                         startActivity(new Intent(getApplicationContext(),CreateActivity.class));
+                        intent.putExtra("usernameStore", usernameStore);
                         overridePendingTransition(0,0);
                         return true;
                 }

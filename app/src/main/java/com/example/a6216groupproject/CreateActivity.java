@@ -20,6 +20,8 @@ public class CreateActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.creation);
+        Intent intent = getIntent();
+        String usernameStore = intent.getStringExtra("usernameStore");
 
         ToggleButton catToggleButton = (ToggleButton) findViewById(R.id.catToggleButton);
 
@@ -67,6 +69,7 @@ public class CreateActivity extends Activity {
                     intent.putExtra("destinationStore", destinationString);
                     intent.putExtra("depTimeStore", depTimeString);
                     intent.putExtra("contentStore", contentString);
+                    intent.putExtra("usernameStore", usernameStore);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intent);
                     Toast.makeText(getApplicationContext(), "Your Post has been created successfully!", Toast.LENGTH_LONG).show();

@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         String usernameStore = intent.getStringExtra("usernameStore");
         String passwordStore = intent.getStringExtra("passwordStore");
 
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,9 +41,10 @@ public class MainActivity extends AppCompatActivity {
                 } else if (!usernameString.equals(usernameStore) || !passwordString.equals(passwordStore)){
                     Toast.makeText(getApplicationContext(), "Username or Password is incorrect.", Toast.LENGTH_LONG).show();
                 } else {
-                    Intent intent2 = new Intent(MainActivity.this, HomeActivity.class);
-                    intent2.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                    startActivity(intent2);
+                    Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                    intent.putExtra("usernameStore", usernameStore);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    startActivity(intent);
                     Toast.makeText(getApplicationContext(), "Login successfully!", Toast.LENGTH_LONG).show();
                 }
 
@@ -54,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void registerLayout(View view){
-        Intent intent3 = new Intent(MainActivity.this, SignupActivity.class);
-        intent3.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-        startActivity(intent3);
+        Intent intent = new Intent(MainActivity.this, SignupActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        startActivity(intent);
     }
 }
