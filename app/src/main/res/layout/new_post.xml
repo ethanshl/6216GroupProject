@@ -39,49 +39,47 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:columnCount="2"
-            android:useDefaultMargins="true"
-            android:padding="12dp">
+            android:padding="12dp"
+            android:useDefaultMargins="true">
 
             <TextView
+                android:id="@+id/titleTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Need a ride from Kamurocho to Isezaki ljincho"
-                android:textStyle="bold"
-                android:textSize="20dp"
-                android:id="@+id/titleTextView"
                 android:layout_column="0"
                 android:layout_columnSpan="2"
                 android:paddingBottom="12dp"
+                android:text="Need a ride from Kamurocho to Isezaki ljincho"
                 android:textColor="@color/black"
-                />
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
             <ImageView
+                android:id="@+id/headImageView"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:src="@drawable/user1"
-                android:id="@+id/headImageView"/>
+                android:src="@drawable/user1" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="5dp">
 
                 <TextView
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
                     android:id="@+id/nameTextView"
-                    android:text="@string/member_name"
-                    android:textStyle="bold"
-                    android:textSize="16dp"
-                    android:textColor="@color/black"
-                    />
-
-                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="New"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <TextView
                     android:id="@+id/memberTextView"
-                    android:text="@string/member_title"/>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/member_title" />
 
             </LinearLayout>
 
@@ -89,96 +87,92 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Posted"
-                android:textSize="12dp"
                 android:textColor="#82C3EC"
-                />
+                android:textSize="12dp" />
 
             <TextView
-                android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/post_date"
-                android:textSize="12dp"
-                android:textColor="#82C3EC"/>
+                android:textColor="#82C3EC"
+                android:textSize="12dp" />
 
             <GridLayout
+                android:id="@+id/infoTableGridLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="10dp"
                 android:layout_columnSpan="2"
                 android:columnCount="2"
-                android:id="@+id/infoTableGridLayout"
-                >
+                android:paddingTop="10dp">
 
                 <TextView
                     android:layout_width="155dp"
                     android:layout_height="35dp"
-                    android:text="Category"
-                    android:gravity="center"
-                    android:textColor="@color/white"
                     android:background="@drawable/border"
-                    />
+                    android:gravity="center"
+                    android:text="Category"
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/catTextView"
                     android:layout_width="210dp"
                     android:layout_height="35dp"
-                    android:text="@string/member_category"
-                    android:gravity="center"
                     android:background="@drawable/border_input"
-                    android:textColor="@color/black"/>
+                    android:gravity="center"
+                    android:text="@string/member_category"
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:layout_width="155dp"
                     android:layout_height="35dp"
-                    android:text="Departure Location"
+                    android:background="@drawable/border"
                     android:gravity="center"
-                    android:textColor="@color/white"
-                    android:background="@drawable/border"/>
+                    android:text="Departure Location"
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/depLocationTextView"
                     android:layout_width="210dp"
                     android:layout_height="35dp"
-                    android:text="@string/departure_location"
-                    android:gravity="center"
                     android:background="@drawable/border_input"
-                    android:textColor="@color/black"/>
+                    android:gravity="center"
+                    android:text="@string/departure_location"
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:layout_width="155dp"
                     android:layout_height="35dp"
-                    android:text="Destination"
-                    android:gravity="center"
-                    android:textColor="@color/white"
                     android:background="@drawable/border"
-                    android:padding="0dp"/>
+                    android:gravity="center"
+                    android:padding="0dp"
+                    android:text="Destination"
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/destinationTextView"
                     android:layout_width="210dp"
                     android:layout_height="35dp"
-                    android:text="@string/destination"
-                    android:gravity="center"
                     android:background="@drawable/border_input"
-                    android:textColor="@color/black"/>
+                    android:gravity="center"
+                    android:text="@string/destination"
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:layout_width="155dp"
                     android:layout_height="35dp"
-                    android:text="Depart Time"
-                    android:gravity="center"
-                    android:textColor="@color/white"
                     android:background="@drawable/border"
-                    />
+                    android:gravity="center"
+                    android:text="Depart Time"
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/depTimeTextView"
                     android:layout_width="210dp"
                     android:layout_height="35dp"
-                    android:text="@string/depart_time"
-                    android:gravity="center"
                     android:background="@drawable/border_input"
-                    android:textColor="@color/black"/>
+                    android:gravity="center"
+                    android:text="@string/depart_time"
+                    android:textColor="@color/black" />
 
             </GridLayout>
 
@@ -187,36 +181,33 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_columnSpan="2"
-                android:text="Trip Detail"
                 android:paddingTop="10dp"
-                android:textStyle="bold"
+                android:text="Trip Detail"
+                android:textColor="@color/black"
                 android:textSize="15dp"
-                android:textColor="@color/black"/>
+                android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/contentTextView"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
                 android:layout_columnSpan="2"
-                android:id="@+id/contentTextView"
                 android:text="@string/trip_detail"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Message Him"
                 android:layout_columnSpan="2"
                 android:layout_marginLeft="125dp"
                 android:backgroundTint="@drawable/button_background_color"
-                android:textColor="@drawable/button_text_color"
-                />
+                android:text="Message Him"
+                android:textColor="@drawable/button_text_color" />
 
             <!--Switch with default state as enabled-->
 
 
         </GridLayout>
-
-
 
 
     </ScrollView>
