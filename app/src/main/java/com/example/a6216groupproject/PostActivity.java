@@ -45,5 +45,10 @@ public class PostActivity extends Activity {
             }
         });
     }
+    public void backHomeLayout(View view){
+        Intent intent = new Intent(PostActivity.this, HomeActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        startActivity(intent);
+    }
 }
 

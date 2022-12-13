@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 } else if (!usernameString.equals(usernameStore) || !passwordString.equals(passwordStore)){
                     Toast.makeText(getApplicationContext(), "Username or Password is incorrect.", Toast.LENGTH_LONG).show();
                 } else {
-                    Intent intent2 = new Intent(MainActivity.this, HomeActivity.class);
+                    Intent intent2 = new Intent(MainActivity.this, NewPostActivity.class);
                     intent2.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intent2);
                     Toast.makeText(getApplicationContext(), "Login successfully!", Toast.LENGTH_LONG).show();

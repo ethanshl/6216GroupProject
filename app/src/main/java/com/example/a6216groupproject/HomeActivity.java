@@ -97,7 +97,7 @@ public class HomeActivity extends Activity {
         });
     }
     public void postLayout(View view){
-        Intent intent = new Intent(HomeActivity.this, PostActivity.class);
+        Intent intent = new Intent(HomeActivity.this, NewPostActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         startActivity(intent);
     }

@@ -19,6 +19,15 @@ public class NewPostActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.new_post);
 
+
+
+        TextView title = (TextView) findViewById(R.id.newTitle);
+        TextView category = (TextView) findViewById(R.id.catTextView);
+        TextView departureLocation = (TextView) findViewById(R.id.newDepLocation);
+        TextView destination = (TextView) findViewById(R.id.newDestination);
+        TextView depTime = (TextView) findViewById(R.id.newDepTime);
+        TextView content = (TextView) findViewById(R.id.newContent);
+
         Intent intent = getIntent();
         String usernameString = intent.getStringExtra("usernameStore");
         String titleString = intent.getStringExtra("titleStore");
@@ -28,25 +37,8 @@ public class NewPostActivity extends Activity {
         String depTimeString = intent.getStringExtra("depTimeStore");
         String contentString = intent.getStringExtra("contentStore");
 
-        TextView title = (TextView) findViewById(R.id.titleTextView);
-        TextView category = (TextView) findViewById(R.id.catTextView);
-        TextView departureLocation = (TextView) findViewById(R.id.depLocationTextView);
-        TextView destination = (TextView) findViewById(R.id.destinationTextView);
-        TextView depTime = (TextView) findViewById(R.id.depTimeTextView);
-        TextView content = (TextView) findViewById(R.id.contentTextView);
-
-
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
-
-        if (!TextUtils.isEmpty(titleString) || !TextUtils.isEmpty(departureLocationString)|| !TextUtils.isEmpty(destinationString) || !TextUtils.isEmpty(depTimeString)) {
-            title.setText(titleString);
-            category.setText(categoryString);
-            departureLocation.setText(departureLocationString);
-            destination.setText(destinationString);
-            depTime.setText(depTimeString);
-
-        }
 
 
         // Perform item selected listener
@@ -72,5 +64,9 @@ public class NewPostActivity extends Activity {
             }
         });
     }
-
+    public void backHomeLayout(View view){
+        Intent intent = new Intent(NewPostActivity.this, HomeActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        startActivity(intent);
+    }
 }

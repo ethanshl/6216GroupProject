@@ -43,7 +43,7 @@
             android:useDefaultMargins="true">
 
             <TextView
-                android:id="@+id/titleTextView"
+                android:id="@+id/newTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_column="0"
@@ -67,7 +67,7 @@
                 android:padding="5dp">
 
                 <TextView
-                    android:id="@+id/nameTextView"
+                    android:id="@+id/newName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="New"
@@ -76,10 +76,9 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/memberTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/member_title" />
+                    android:text="Demo User" />
 
             </LinearLayout>
 
@@ -131,7 +130,7 @@
                     android:textColor="@color/white" />
 
                 <TextView
-                    android:id="@+id/depLocationTextView"
+                    android:id="@+id/newDepLocation"
                     android:layout_width="210dp"
                     android:layout_height="35dp"
                     android:background="@drawable/border_input"
@@ -149,7 +148,7 @@
                     android:textColor="@color/white" />
 
                 <TextView
-                    android:id="@+id/destinationTextView"
+                    android:id="@+id/newDestination"
                     android:layout_width="210dp"
                     android:layout_height="35dp"
                     android:background="@drawable/border_input"
@@ -166,7 +165,7 @@
                     android:textColor="@color/white" />
 
                 <TextView
-                    android:id="@+id/depTimeTextView"
+                    android:id="@+id/newDepTime"
                     android:layout_width="210dp"
                     android:layout_height="35dp"
                     android:background="@drawable/border_input"
@@ -188,21 +187,13 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/contentTextView"
+                android:id="@+id/newContent"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
                 android:layout_columnSpan="2"
                 android:text="@string/trip_detail"
                 android:textColor="@color/black" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_columnSpan="2"
-                android:layout_marginLeft="125dp"
-                android:backgroundTint="@drawable/button_background_color"
-                android:text="Message Him"
-                android:textColor="@drawable/button_text_color" />
 
             <!--Switch with default state as enabled-->
 
