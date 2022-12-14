@@ -18,14 +18,16 @@
             android:src="@drawable/left"
             android:background="@color/teal_200"
             android:onClick="backHomeLayout"
-            app:tint="@color/white" />
+            android:tint="@color/white"
+           />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:layout_marginLeft="105dp"
-            android:paddingTop="15dp"
-            android:text="Message"
+            android:layout_marginLeft="92dp"
+            android:paddingTop="12dp"
+            android:textSize="18dp"
+            android:text="Post Details"
             android:textColor="@color/white" />
     </LinearLayout>
 
@@ -71,7 +73,7 @@
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:id="@+id/nameTextView"
-                    android:text="@string/member_name"
+                    android:text="Kiryu"
                     android:textStyle="bold"
                     android:textSize="16dp"
                     android:textColor="@color/black"
@@ -80,7 +82,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/memberTextView"
+                    android:id="@+id/profileTextView"
                     android:text="@string/member_title"/>
 
             </LinearLayout>
@@ -94,6 +96,7 @@
                 />
 
             <TextView
+                android:id="@+id/postDateTextView"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:text="@string/post_date"
@@ -229,6 +232,6 @@
         app:itemBackground="@color/teal_200"
         app:itemIconTint="@drawable/selector"
         app:itemTextColor="@drawable/selector"
-        app:menu="@menu/menu"/>
+        app:menu="@menu/menu" />
 
 </RelativeLayout>

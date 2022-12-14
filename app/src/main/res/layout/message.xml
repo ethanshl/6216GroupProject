@@ -10,33 +10,25 @@
         android:orientation="horizontal"
         android:background="@color/teal_200"
         android:layout_alignParentTop="true">
-        <ImageButton
-            android:layout_marginLeft="25dp"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/left"
-            android:background="@color/teal_200"
-            android:onClick="backHomeLayout"
-            app:tint="@color/white" />
+
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:layout_marginLeft="105dp"
             android:paddingTop="15dp"
             android:text="Message"
+            android:textAlignment="center"
+            android:textSize="18dp"
             android:textColor="@color/white" />
     </LinearLayout>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="45dp"
-        android:layout_marginBottom="58dp">
-
-
-    </ScrollView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Message"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:layout_centerInParent="true"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

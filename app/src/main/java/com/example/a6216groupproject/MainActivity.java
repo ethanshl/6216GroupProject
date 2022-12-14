@@ -1,12 +1,12 @@
 package com.example.a6216groupproject;
 
 import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle; // for saving state information
+import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.content.Intent;
 import android.widget.Button;
-import android.widget.EditText; // for bill amount input
+import android.widget.EditText;
 import android.widget.Toast;
 
 
@@ -57,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void registerLayout(View view){
-        Intent intent3 = new Intent(MainActivity.this, SignupActivity.class);
-        intent3.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-        startActivity(intent3);
+        Intent intent = new Intent(MainActivity.this, SignupActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        startActivity(intent);
     }
 }

@@ -1,12 +1,12 @@
 package com.example.a6216groupproject;
 
 import android.app.Activity;
-import android.os.Bundle; // for saving state information
+import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.content.Intent;
 import android.widget.Button;
-import android.widget.EditText; // for bill amount input
+import android.widget.EditText;
 import android.widget.Toast;
 import android.view.MenuItem;
 import androidx.annotation.NonNull;

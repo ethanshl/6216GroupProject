@@ -1,17 +1,20 @@
 package com.example.a6216groupproject;
 
 import android.app.Activity;
-import android.os.Bundle; // for saving state information
+import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.content.Intent;
 import android.widget.Button;
-import android.widget.EditText; // for bill amount input
+import android.widget.EditText;
 import android.widget.Toast;
 import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import android.widget.ToggleButton;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 
 public class CreateActivity extends Activity {
@@ -59,6 +62,7 @@ public class CreateActivity extends Activity {
                 if (TextUtils.isEmpty(titleString) || TextUtils.isEmpty(departureLocationString)|| TextUtils.isEmpty(destinationString) || TextUtils.isEmpty(depTimeString) || TextUtils.isEmpty(contentString)){
                     Toast.makeText(getApplicationContext(), "Please fill in your post information.", Toast.LENGTH_LONG).show();
                 } else {
+                    String currentDate = new SimpleDateFormat("M/dd/yyyy", Locale.getDefault()).format(new Date());
 
                     Intent intent = new Intent(CreateActivity.this, HomeActivity.class);
                     intent.putExtra("catStore", catString);
@@ -67,6 +71,7 @@ public class CreateActivity extends Activity {
                     intent.putExtra("destinationStore", destinationString);
                     intent.putExtra("depTimeStore", depTimeString);
                     intent.putExtra("contentStore", contentString);
+                    intent.putExtra("postDateStore", currentDate);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                     startActivity(intent);
                     Toast.makeText(getApplicationContext(), "Your Post has been created successfully!", Toast.LENGTH_LONG).show();

@@ -1,17 +1,18 @@
 package com.example.a6216groupproject;
 
 import android.app.Activity;
-import android.os.Bundle; // for saving state information
+import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.content.Intent;
 import android.widget.Button;
-import android.widget.EditText; // for bill amount input
+import android.widget.EditText;
 import android.widget.Toast;
 import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import android.widget.TextView;
+import android.widget.ImageView;
 
 public class PostActivity extends Activity {
     @Override
@@ -19,33 +20,44 @@ public class PostActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.post);
 
-        // Initialize and assign variable
-        BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
-        TextView title = (TextView) findViewById(R.id.titleTextView);
-        TextView category = (TextView) findViewById(R.id.catTextView);
-        TextView departureLocation = (TextView) findViewById(R.id.depLocationTextView);
-        TextView destination = (TextView) findViewById(R.id.destinationTextView);
-        TextView depTime = (TextView) findViewById(R.id.depTimeTextView);
-        TextView content = (TextView) findViewById(R.id.contentTextView);
-
         Intent intent = getIntent();
-        String usernameString = intent.getStringExtra("usernameStore");
         String titleString = intent.getStringExtra("titleStore");
         String categoryString = intent.getStringExtra("catStore");
         String departureLocationString = intent.getStringExtra("departureLocationStore");
         String destinationString = intent.getStringExtra("destinationStore");
         String depTimeString = intent.getStringExtra("depTimeStore");
         String contentString = intent.getStringExtra("contentStore");
+        String currentDate = intent.getStringExtra("postDateStore");
+
+        // Initialize and assign variable
+        BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
+        TextView title = (TextView) findViewById(R.id.titleTextView);
+        TextView username = (TextView) findViewById(R.id.nameTextView);
+        TextView profile = (TextView) findViewById(R.id.profileTextView);
+        TextView postDate = (TextView) findViewById(R.id.postDateTextView);
+        TextView category = (TextView) findViewById(R.id.catTextView);
+        TextView departureLocation = (TextView) findViewById(R.id.depLocationTextView);
+        TextView destination = (TextView) findViewById(R.id.destinationTextView);
+        TextView depTime = (TextView) findViewById(R.id.depTimeTextView);
+        TextView content = (TextView) findViewById(R.id.contentTextView);
+        ImageView userImage = (ImageView) findViewById(R.id.headImageView);
 
 
-        title.setText(titleString);
-        category.setText(categoryString);
-        departureLocation.setText(departureLocationString);
-        destination.setText(destinationString);
-        depTime.setText(depTimeString);
-        content.setText(contentString);
 
+        if (!TextUtils.isEmpty(titleString) || !TextUtils.isEmpty(departureLocationString)|| !TextUtils.isEmpty(destinationString) || !TextUtils.isEmpty(depTimeString)) {
 
+            title.setText(titleString);
+            userImage.setImageResource(R.drawable.user2);
+            username.setText("Ethan");
+            profile.setText("Demo User");
+            postDate.setText(currentDate);
+            category.setText(categoryString);
+            departureLocation.setText(departureLocationString);
+            destination.setText(destinationString);
+            depTime.setText(depTimeString);
+            content.setText(contentString);
+
+        }
 
         // Perform item selected listener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {

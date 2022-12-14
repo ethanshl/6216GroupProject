@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">6216 Group Project</string>
-    <string name="member_name">KiryuK</string>
+    <string name="member_name">Kiryu</string>
     <string name="member_title">The Dragon of Dojima</string>
-    <string name="post_date">November 14, 2022</string>
+    <string name="post_date">11/142022</string>
 
     <string name="member_category">Passenger</string>
     <string name="departure_location">Kamurocho, Tokyo</string>
