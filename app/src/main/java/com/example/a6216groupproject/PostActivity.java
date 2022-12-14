@@ -41,6 +41,8 @@ public class PostActivity extends Activity {
         TextView depTime = (TextView) findViewById(R.id.depTimeTextView);
         TextView content = (TextView) findViewById(R.id.contentTextView);
         ImageView userImage = (ImageView) findViewById(R.id.headImageView);
+        View messageButton = findViewById(R.id.messageButton);
+
 
 
 
@@ -56,6 +58,7 @@ public class PostActivity extends Activity {
             destination.setText(destinationString);
             depTime.setText(depTimeString);
             content.setText(contentString);
+            messageButton.setVisibility(View.GONE);
 
         }
 
